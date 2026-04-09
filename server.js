@@ -55,7 +55,7 @@ app.put('/Pacientes/:id', async (req, res) => {
     SET idade = ? , sexo =?, endereco=?
     WHERE id = ?`, [idade, sexo, endereco, id])
 
-  res.send(`cadastro do Paciente ${nome}, atualizado  com sucesso!!`)
+  res.send(`cadastro do Paciente ${id} atualizado  com sucesso!!`)
 })
 
 
@@ -65,7 +65,7 @@ app.delete ('/Pacientes/:id', async (req, res) => {
 
   await db.run(`DELETE FROM Pacientes WHERE id=?`, [req.params.id])
 
-  res.send(` cadastro do Paciente ${nome}, deletado com sucesso!!`)
+  res.send(` cadastro do Paciente ${req.params.id}, deletado com sucesso!!`)
 
 })
 
@@ -73,5 +73,5 @@ app.delete ('/Pacientes/:id', async (req, res) => {
 // Servidor
 const PORT =  process.env.PORT || 4000
 app.listen(PORT, () => {
-  console.log(`servidor rodando em http://localhost:${PORT}`)
+  console.log(`servidor rodando na porta ${PORT}`)
 })
