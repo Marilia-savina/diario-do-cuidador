@@ -5,7 +5,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon server.js",
-    "postinstall": "npm rebuild sqlite3",
+    "postinstall": "npm install sqlite3 --build-from-source",
     "start": "node server.js"
   },
   
